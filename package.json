@@ -1,0 +1,28 @@
+{
+  "name": "hexlet-js-functions",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Hexlet JS Functions practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drylb/hexlet-js-functions.git"
+  },
+  "author": "Vlad Sergy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drylb/hexlet-js-functions/issues"
+  },
+  "homepage": "https://github.com/drylb/hexlet-js-functions#readme",
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
