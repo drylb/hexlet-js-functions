@@ -5,7 +5,7 @@ import _ from 'lodash';
 
 // VERSION 1
 
-const average = (...numbers) => {
+const average = (numbers) => {
   if (!numbers.length) {
     return null;
   }
