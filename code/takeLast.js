@@ -21,7 +21,7 @@ const run1 = (text) => {
       return null;
     }
     const result = [];
-    for (let i = str.length - 1; i > 0; i -= 1) {
+    for (let i = str.length - 1; i >= 0; i -= 1) {
       result.push(str[i]);
     }
     return result.slice(0, num).join('');
