@@ -22,7 +22,6 @@ const groupBy2 = (students, key) => students.reduce((acc, obj) => {
 const groupBy3 = (students, key) => students.reduce((acc, curr) => {
   const value = curr[key];
   acc[value] = [...acc[value] ?? [], curr];
-  console.log(acc);
   return acc;
 }, {});
 
