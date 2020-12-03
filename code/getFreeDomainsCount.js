@@ -1,23 +1,13 @@
 // @ts-check
 import _ from 'lodash';
-// import get from 'lodash/get';
-const emails = [
-  'info@gmail.com',
-  'info@yandex.ru',
-  'info@hotmail.com',
-  'mk@host.com',
-  'support@hexlet.io',
-  'key@yandex.ru',
-  'sergey@gmail.com',
-  'vovan@gmail.com',
-  'vovan@hotmail.com',
-];
+
 const freeEmailDomains = [
   'gmail.com',
   'yandex.ru',
   'hotmail.com',
 ];
 
+// BEGIN (write your solution here)
 // #VERSION 1
 
 const getFreeDomainsCount = (emails) => {
@@ -46,7 +36,7 @@ const getFreeDomainsCount1 = (emails) => emails
     return { ...acc, [domain]: count };
   }, {});
 
-// console.log(getFreeDomainsCount1(emails));
+// #VERSION 3 WITH LODASH
 
 const getFreeDomainsCount2 = (emails) => {
   const mails = emails.map((mail) => mail.split('@'));
@@ -58,8 +48,8 @@ const getFreeDomainsCount2 = (emails) => {
   }, {});
   return domains;
 };
-console.log(getFreeDomainsCount2(emails));
-// BEGIN (write your solution here)
+
+export { getFreeDomainsCount, getFreeDomainsCount1, getFreeDomainsCount2 };
 
 // END
 
