@@ -1,4 +1,6 @@
-// BEGIN
+// @ts-check
+import _ from 'lodash';
+// BEGIN (write your solution here)
 const barChart = (numbers) => {
   const bottom = Math.min(0, ...numbers);
   const top = Math.max(0, ...numbers);
@@ -15,32 +17,8 @@ const barChart = (numbers) => {
     .map((line) => line.join(''))
     .join('\n');
 
-  console.log(chart);
+  return chart;
 };
-
-// Альтернативный вариант решения с использованием цикла
-// export default (numbers) => {
-//   const top = Math.abs(_.max(numbers));
-//   const bottom = Math.abs(_.min(numbers));
-//   const height = top + bottom;
-
-//   const lines = [];
-
-//   for (let i = height; i > 0; i -= 1) {
-//     const row = numbers.map((number) => {
-//       if (i > bottom) {
-//         return number >= i - bottom ? '*' : ' ';
-//       }
-//       return number < i - bottom ? '#' : ' ';
-//     });
-
-//     lines.push(row.join(''));
-//   }
-
-//   const emptyLine = _.repeat(' ', numbers.length);
-//   const chart = lines.filter((line) => line !== emptyLine).join('\n');
-//   console.log(chart);
-// };
 
 const barChart1 = (numbers) => {
   const max = Math.max(...numbers);
@@ -64,8 +42,9 @@ const barChart1 = (numbers) => {
   return chart;
 };
 
-console.log(barChart1([5, 10, -5, -3, 7]));
+export { barChart, barChart1 };
 // END
+
 /* Реализуйте и экспортируйте по умолчанию функцию, которая выводит на экран столбчатую диаграмму.
 Функция принимает в качестве параметра последовательность чисел, длина которой равна количеству
 столбцов диаграммы. Размер диаграммы по вертикали должен определяться входными данными.
