@@ -1,11 +1,12 @@
 // @ts-check
 
-import chunk from 'lodash/chunk.js';
+import chunk from 'lodash/chunk';
 
 // BEGIN (write your solution here)
-// ['#24ab00', { r: 36, g: 171, b: 0 }],
 const toDecimal = (num) => Number(parseInt(num, 16));
 const toHex = (num) => num.toString(16);
+
+// VERSION #1
 
 const hexToRgb = (hexColor) => {
   const withOutHash = hexColor.slice(1);
@@ -22,6 +23,8 @@ const hexToRgb = (hexColor) => {
   return toRgb;
 };
 
+// VERSION #1
+
 const rgbToHex = (r, g, b) => {
   const args = [r, g, b];
   const hex = args.reduce((acc, curr) => {
@@ -31,11 +34,15 @@ const rgbToHex = (r, g, b) => {
   return `#${hex.join('')}`;
 };
 
+// VERSION #2
+
 const rgbToHex1 = (...channels) => {
   const hex = channels
     .map((chanel) => toHex(chanel).padStart(2, '0')).join('');
   return `#${hex}`;
 };
+
+// VERSION #2
 
 const hexToRgb1 = (hex) => {
   const [r, g, b] = chunk(hex.slice(1), 2)
@@ -43,11 +50,14 @@ const hexToRgb1 = (hex) => {
   return { r, g, b };
 };
 
-console.log(rgbToHex1(36, 171, 0));
-console.log(hexToRgb1('#24ab00'));
+export {
+  hexToRgb,
+  rgbToHex,
+  hexToRgb1,
+  rgbToHex1,
+};
 
 // END
-// console.log(toDec('24'));
 
 /* Для задания цветов в HTML и CSS используются числа в шестнадцатеричной системе счисления.
 Чтобы не возникало путаницы в определении системы счисления, перед шестнадцатеричным числом
